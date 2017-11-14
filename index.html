@@ -6,12 +6,10 @@
 
     <link href="styles/bootstrap.min.css" rel="stylesheet">
     <link href="styles/justified-nav.css" rel="stylesheet">
-    <script src="scripts/jquery-3.1.1.slim.min.js.Download" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="scripts/jquery.min.js"><\/script>')
-    </script>
-    <script src="scripts/tether.min.js.Download" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="scripts/bootstrap.min.js.Download"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="scripts/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/navbar.js"></script>
 </head>
 
 <body>
@@ -24,17 +22,17 @@
             <nav class="navbar navbar-light bg-faded rounded mb-3">
                 <div class="navbar-toggleable-md collapse show" id="navbarCollapse" aria-expanded="true" style="">
                     <ul class="nav navbar-nav text-md-center justify-content-md-between">
-                        <li class="nav-item active">
-                            <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+                        <li class="nav-item active home">
+                            <a class="nav-link homeA">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Projects</a>
+                        <li class="nav-item temp">
+                            <a class="nav-link tempA">Temperatur</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Services</a>
+                        <li class="nav-item humid">
+                            <a class="nav-link humidA">Luftfeuchtigkeit</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Downloads</a>
+                        <li class="nav-item light">
+                            <a class="nav-link lightA">Helligkeit</a>
                         </li>
                     </ul>
                 </div>
