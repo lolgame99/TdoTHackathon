@@ -2,7 +2,7 @@ $(function() {
     //Better to construct options first and then pass it as a parameter
     var options = {
         title: {
-            text: "Cumulative App downloads on iTunes And Play Store"
+            text: "Temperatur"
         },
         animationEnabled: true,
         axisY: {
@@ -12,7 +12,7 @@ $(function() {
             suffix: " k"
         },
         axisX: {
-            title: "Months After Launch"
+            title: "Zeit"
         },
         toolTip: {
             shared: true,

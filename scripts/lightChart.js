@@ -1,18 +1,35 @@
 $(function() {
+    $.ajax({
+        method: "GET",
+        url: "http://vd9ksd.myvserver.online/lora/values?limit=10",
+        success: function(data) {
+            var output = "";
+            var left = true;
+            var test = 0;
+            $.each(data, function(id, obj) {
+                console.log(test);
+
+
+            });
+            $(".wrapper").html(output);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
     //Better to construct options first and then pass it as a parameter
     var options = {
         title: {
-            text: "Cumulative App downloads on iTunes And Play Store"
+            text: "Helligkeit"
         },
         animationEnabled: true,
         axisY: {
             includeZero: false,
             maximum: 110000,
-            valueFormatString: "#0,.",
-            suffix: " k"
+            valueFormatString: "#0,."
         },
         axisX: {
-            title: "Months After Launch"
+            title: "Zeitpunkt"
         },
         toolTip: {
             shared: true,
@@ -22,7 +39,7 @@ $(function() {
         data: [{
             type: "splineArea",
             showInLegend: true,
-            name: "iOS",
+            name: "Helligkeit",
             dataPoints: [{
                     x: 1,
                     y: 3000
@@ -62,13 +79,10 @@ $(function() {
                 {
                     x: 10,
                     y: 81000
-                },
-                {
-                    x: 11,
-                    y: 105000
                 }
             ]
         }]
     };
     $(".chartContainer").CanvasJSChart(options);
+
 });
