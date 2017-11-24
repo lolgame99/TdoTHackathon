@@ -1,5 +1,6 @@
 $(function() {
     var options = {};
+    var dataP = [];
     $.ajax({
         method: "GET",
         url: "http://vd9ksd.myvserver.online/lora/values?limit=10",
@@ -11,7 +12,7 @@ $(function() {
                 animationEnabled: true,
                 axisY: {
                     includeZero: false,
-                    maximum: 10,
+                    maximum: 100,
                     valueFormatString: "#0"
                 },
                 axisX: {
@@ -26,26 +27,24 @@ $(function() {
                     type: "splineArea",
                     showInLegend: true,
                     name: "Helligkeit",
-                    dataPoints: [{
-                        x: 1,
-                        y: 3000
-                    }]
+                    dataPoints: []
                 }]
             };
 
             $.each(data, function(id, obj) {
                 var coords = {};
                 var str = obj.payload_fields.light;
-                var lightVal = str.substr(str.indexOf("(") + 1, str.indexOf(","));
+                var lightVal = str.substr(str.indexOf("(") + 1, str.indexOf(",") - 1);
                 str = obj.metadata.time;
                 coords.y = lightVal;
-                coords.x = str.substr(str.indexOf("T") + 1, str.indexOf("T") + 6);
+                coords.x = str.substr(str.indexOf("T") + 1, str.indexOf("T") + 3);
 
-                options.data.dataPoints.push(coords);
+                dataP.push(coords);
 
 
             });
-            $(".wrapper").html(output);
+
+            options.data.dataPoints = dataP;
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(textStatus, errorThrown);
