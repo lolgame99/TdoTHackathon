@@ -39,7 +39,7 @@ $(function() {
                 coords.y = lightVal;
                 coords.x = str.substr(str.indexOf("T") + 1, str.indexOf("T") + 3);
 
-                dataP.push(coords);
+                options.data[0].dataPoints.push(coords);
 
 
             });
